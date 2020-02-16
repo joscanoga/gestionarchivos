@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
   <head>
+    <meta name="description" content="gestor de archivos">
     <title>Gestor de Archivos</title>
+    <link rel="icon" href="imagenes/carpeta.png">
   </head>
   <style>
     .dropbtn {
@@ -34,6 +36,10 @@
   </style>
 
   <body>
+    <?php
+    define(RUTABASE,"/home/johan/archivos");
+    $rutacomplemento="";
+    ?>
     <header>
         <h1>Gestor de Archivos </h1>
           <div class="dropdown">
@@ -42,7 +48,7 @@
 
               
                 <!--Funciones de crear carpeta y archivo, redireccionar a archivo php o JS-->
-                <a href="#funcionqueCreeUnaCarpeta">Carpeta</a>
+                <a href="nuevacarpeta.php">carpeta</a>
                 <a href="#FuncionQueCreeUnArchivo">Archivo</a>
             </div>
         </div>
