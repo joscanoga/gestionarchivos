@@ -7,13 +7,15 @@
 </head>
 <body>
 <?php
-$ruta=$_GET[rutac];
+$ruta=$_GET[rutab].$_GET[rutac];
 $name=$_GET[name];
+$rutab=$_GET[rutab];
+#echo $rutab
 ?>
     <header>
 <h1>Desea eliminar la carpeta?</h1>
 <div>
-<a href="index.php?rutac=<?php echo $ruta?>">no </a><a href="eliminarc.php?ruta=<?php  echo $ruta ?>&name=<?php echo $name ?>"> si</a>
+<a href="index.php?rutac=<?php echo $_GET[rutac]?>">no </a><a href="eliminarc.php?ruta=<?php  echo $ruta ?>&name=<?php echo $name ?>"> si</a>
     </header>
 </body>
 </html>

@@ -67,10 +67,23 @@
   <body>
     <?php
     define(RUTABASE,"/home/johan/archivos/");
-    
+
+    $rutap="";
     $rutacomplemento=$_GET['rutac'];
     $ruta=RUTABASE . $rutacomplemento;
-    
+    #encuentra la ruta padre con la ruta del archivo
+    function padre($rutai){
+     # echo "entro a la funcion";
+      $date=explode("/",$rutai);
+    for($i=0;$i < sizeof($date)-2;$i++){
+      #echo "entro al for";
+     $rutap=$rutap.$date[$i]."/";
+      #echo $i;
+    }
+    return $rutap;
+  }#echo $rutacomplemento."<br>";
+    $rutap=padre($rutacomplemento);
+    #echo "rutap ".$rutap;
     ?>
     <header>
         <h1>Gestor de Archivos </h1>
@@ -92,7 +105,7 @@
               
                 
                 <a href="index.php" >Raiz</a>
-                <a href="nuevoarchivo.php?Ruta=<?php echo $ruta?>">Carpeta anterior</a>
+                <a href="index.php?rutac=<?php echo $rutap ?>">Carpeta anterior</a>
             </div>
         </div>
         
@@ -133,15 +146,15 @@
         <div class="dropdown-content">
          
           
-            <!--Funciones de crear carpeta y archivo, redireccionar a archivo php o JS-->
+            <!--Funciones de  carpeta -->
             <a href="index.php?rutac='.$rutacomplemento.$i.'/'.'" >Abrir</a>
             <a href="renombrar.php?rutac='.$ruta.'&name='.$i.'">Renombrar</a>
-            <a href="eliminarcarpeta.php?rutac='.$ruta.'&name='.$i.'" >Eliminar</a>
+            <a href="eliminarcarpeta.php?rutab='.RUTABASE.'&rutac='.$rutacomplemento.'&name='.$i.'" >Eliminar</a>
             <a href="copyc.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >copair/pegar</a>
             <a href=" #ver informacion de permisos" >Ver informacion de permisos</a>
             <a href="#cambiar permisos de acseso" >Cambiar permisos de acseso</a>
             <a href="#cambiar propietario" >Cambiar propietario</a>
-            <a href="#mover" >Mover</a>
+            <a href="mover.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >Mover</a>
         </div>
     </div><br>';
       }
@@ -152,7 +165,7 @@
         <div class="dropdown-content">
          
           
-            <!--Funciones de crear carpeta y archivo, redireccionar a archivo php o JS-->
+            <!--Funciones de  archivo-->
             <a href="index.php'.$rutacomplemento.$i.'" >Abrir</a>
             <a href="renombrar.php?rutac='.$ruta.'&name='.$i.'">Renombrar</a>
             <a href="eliminararchivo.php?rutac='.$ruta.'&name='.$i.'" >Eliminar</a>
@@ -160,7 +173,7 @@
             <a href=" #ver informacion de permisos" >Ver informacion de permisos</a>
             <a href="#cambiar permisos de acseso" >Cambiar permisos de acseso</a>
             <a href="#cambiar propietario" >Cambiar propietario</a>
-            <a href="#mover" >Mover</a>
+            <a href="mover.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >Mover</a>
         </div>
     </div><br>';
       }
