@@ -66,10 +66,10 @@
 
   <body>
     <?php
-    define(RUTABASE,"/home/johan/archivos");
+    define(RUTABASE,"/home/johan/archivos/");
     
     $rutacomplemento=$_GET['rutac'];
-    $ruta=RUTABASE ."/". $rutacomplemento;
+    $ruta=RUTABASE . $rutacomplemento;
     
     ?>
     <header>
@@ -134,10 +134,10 @@
          
           
             <!--Funciones de crear carpeta y archivo, redireccionar a archivo php o JS-->
-            <a href="index.php?rutac='.$rutacomplemento.$i.'" >Abrir</a>
+            <a href="index.php?rutac='.$rutacomplemento.$i.'/'.'" >Abrir</a>
             <a href="renombrar.php?rutac='.$ruta.'&name='.$i.'">Renombrar</a>
             <a href="eliminarcarpeta.php?rutac='.$ruta.'&name='.$i.'" >Eliminar</a>
-            <a href="#copiar" >copair/pegar</a>
+            <a href="copyc.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >copair/pegar</a>
             <a href=" #ver informacion de permisos" >Ver informacion de permisos</a>
             <a href="#cambiar permisos de acseso" >Cambiar permisos de acseso</a>
             <a href="#cambiar propietario" >Cambiar propietario</a>
@@ -156,7 +156,7 @@
             <a href="index.php'.$rutacomplemento.$i.'" >Abrir</a>
             <a href="renombrar.php?rutac='.$ruta.'&name='.$i.'">Renombrar</a>
             <a href="eliminararchivo.php?rutac='.$ruta.'&name='.$i.'" >Eliminar</a>
-            <a href="#copiar" >copair/pegar</a>
+            <a href="copiar.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >copair/pegar</a>
             <a href=" #ver informacion de permisos" >Ver informacion de permisos</a>
             <a href="#cambiar permisos de acseso" >Cambiar permisos de acseso</a>
             <a href="#cambiar propietario" >Cambiar propietario</a>

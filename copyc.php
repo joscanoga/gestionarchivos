@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>renombrar</title>
+    <title>rcopiar</title>
 </head>
 <body>
     <header>
@@ -13,18 +13,20 @@
     <div>
         <?php $ruta=$_GET[rutac];
         $name=$_GET[name];
-         echo $ruta.$name;
+        $base=$_GET[basica];
+         #echo $ruta.$name;
         ?>
         <?php 
         SESSION_start();
-        $_SESSION['ruta']=$ruta;
+        $_SESSION['rutao']=$ruta;
         $_SESSION['name']=$name;
+        $_SESSION['base']=$base;
         ?>
         
-        <form action="renombrar1.php" method="GET">
-        <p>Nombre<input type="text" name="nombre"></p>
+        <form action="pegarc.php" method="GET">
+        <p>directorio final<input type="text" name="rutaf"></p>
         
-        <p><input type="submit" value="renombrar"></p>
+        <p><input type="submit" value="pegar"></p>
         </form>
     </div>
 </header>

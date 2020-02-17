@@ -13,17 +13,21 @@ $nombre=$_GET["nombre"];
 
 
 
-
 session_start();
 $ubicacion =$_SESSION[ruta];
 $name=$_SESSION[name];
+$nomviejo=$ubicacion.$name;
+$nomnew=$ubicacion.$nombre;
+#echo $nomviejo;
+#echo $nomnew;
 
 session_stop;
 if(file_exists($ubicacion."/".$nombre)){
     echo "ya existe archivo/carpeta con el mismo nombre en este directorio";
      
 }else{
-    rename($name,$nombre,$ubicacion."/");
+    rename($nomviejo,$nomnew);
+    echo "renombrado exitoso";
 }
 ?>
     </div>
