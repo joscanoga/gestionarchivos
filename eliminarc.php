@@ -8,24 +8,19 @@
 <body>
     <div>
     <?php
-$nombre=$_GET["nombre"];
+$nombre=$_GET["name"];
+$ruta=$_GET["ruta"];
 
+$nombrec=$ruta."/".$nombre;
 
-
-
-session_start();
-$ubicacion =$_SESSION[ruta];
-
-session_stop;
-$nombrec=$ubicacion.'/'.$nombre;
 
 
 if(file_exists($nombrec)){
-    echo "ya existe carpeta con el mismo nombre en este directorio";
+    exec("rm -rf ".$nombrec);
+    echo "carpeta eliminada";
      
 }else{
-mkdir($nombrec);
-echo "carpeta creada";
+    echo "no existe carpeta con este nombre en este directorio";
 }
 ?>
     </div>

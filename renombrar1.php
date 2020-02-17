@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>carpeta</title>
+    <title>renombrar</title>
 </head>
 <body>
     <div>
@@ -15,17 +16,14 @@ $nombre=$_GET["nombre"];
 
 session_start();
 $ubicacion =$_SESSION[ruta];
+$name=$_SESSION[name];
 
 session_stop;
-$nombrec=$ubicacion.'/'.$nombre;
-
-
-if(file_exists($nombrec)){
-    echo "ya existe carpeta con el mismo nombre en este directorio";
+if(file_exists($ubicacion."/".$nombre)){
+    echo "ya existe archivo/carpeta con el mismo nombre en este directorio";
      
 }else{
-mkdir($nombrec);
-echo "carpeta creada";
+    rename($name,$nombre,$ubicacion."/");
 }
 ?>
     </div>
