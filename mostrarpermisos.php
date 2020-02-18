@@ -6,15 +6,15 @@
     <title>permisos </title>
     <style>
 		table {
-			width: 200px;
-			height: 300px;
+			width: 20px;
+			height: 30px;
             background-color: gray;
-            position:absolute;
+            position:left;
             top: 100px;
             left: 200px;
 			}
 			th, td {
-			width: 30%;
+			width: 30px;
 			}
 </style>
 </head>
