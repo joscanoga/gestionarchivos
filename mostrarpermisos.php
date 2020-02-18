@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>permisos </title>
+    <style>
+		table {
+			width: 200px;
+			height: 300px;
+            background-color: gray;
+            position:absolute;
+            top: 100px;
+            left: 200px;
+			}
+			th, td {
+			width: 30%;
+			}
+</style>
 </head>
 <body>
 <?php
@@ -11,10 +24,10 @@ $ruta=$_GET[rutab].$_GET[rutac];
 $name=$_GET[name];
 $rutab=$_GET[rutab];
 #echo $rutab
-
+$rutac=$_GET[rutac];
 ?>
     <header>
-<h1>los permisos </h1>
+
 <?php 
 #echo $ruta.$name;
 $permisos = fileperms($ruta.$name);
@@ -67,10 +80,45 @@ $info .= (($permisos & 0x0001) ?
             (($permisos & 0x0200) ? 't' : 'x' ) :
             (($permisos & 0x0200) ? 'T' : '-'));
 
-echo $info;
-?>
+#echo $info;
+$permisos=explode(" ",$info);
+#echo substr($permisos[1],1,1).$permisos[1]
+?></header>
+<table data-vertable="ver1" style="font-size:100px" border="20px">
+<thead>
+    <tr class="row100 head">
+        <th class="column100 column1" data-column="column1">permisos</th>
+        <th class="column100 column2" data-column="column2">Usuario</th>
+        <th class="column100 column3" data-column="column3">Grupo</th>
+        <th class="column100 column4" data-column="column4">Otros</th>
+
+    </tr>
+</thead>
+<tbody>
+    <tr class="row100">
+        <td class="column100 column1" data-column="column1">lectura</td>
+        <td class="column100 column2" data-column="column2"><?php echo substr($permisos[1],0,1) ?> </td>
+        <td class="column100 column3" data-column="column3"><?php echo substr($permisos[2],0,1) ?></td>
+        <td class="column100 column4" data-column="column4"><?php echo substr($permisos[3],0,1) ?></td>
+    </tr>
+    <tr class="row100">
+        <td class="column100 column1" data-column="column1">escritura</td>
+        <td class="column100 column2" data-column="column2"><?php echo substr($permisos[1],1,1) ?></td>
+        <td class="column100 column3" data-column="column3"><?php echo substr($permisos[2],1,1) ?></td>
+        <td class="column100 column4" data-column="column4"><?php echo substr($permisos[3],1,1) ?></td>
+    </tr>
+    <tr class="row100">
+        <td class="column100 column1" data-column="column1">ejecucion</td>
+        <td class="column100 column2" data-column="column2"><?php echo substr($permisos[1],2,1) ?></td>
+        <td class="column100 column3" data-column="column3"><?php echo substr($permisos[2],2,1) ?></td>
+        <td class="column100 column4" data-column="column4"><?php echo substr($permisos[3],2,1) ?></td>
+    </tr>							
+    
+</tbody>
+</table>
 <div>
 <a href="index.php?rutac=<?php echo $_GET[rutac]?>">atras</a><a href="index.php?rutac="> raiz</a>
-    </header>
+    
+</div>
 </body>
 </html>
