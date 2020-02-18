@@ -80,6 +80,7 @@ $info .= (($permisos & 0x0001) ?
             (($permisos & 0x0200) ? 't' : 'x' ) :
             (($permisos & 0x0200) ? 'T' : '-'));
 
+
 #echo $info;
 $permisos=explode(" ",$info);
 #echo substr($permisos[1],1,1).$permisos[1]
@@ -116,6 +117,7 @@ $permisos=explode(" ",$info);
     
 </tbody>
 </table>
+
 <div>
 <a href="index.php?rutac=<?php echo $_GET[rutac]?>">atras</a><a href="index.php?rutac="> raiz</a>
     
