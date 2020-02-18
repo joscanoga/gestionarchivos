@@ -94,12 +94,12 @@
              
               
                 <!--Funciones de crear carpeta y archivo, redireccionar a archivo php o JS-->
-                <a href="nuevacarpeta.php?Ruta=<?php echo $ruta?>" >carpeta</a>
+                <a href="nuevacarpeta.php?Ruta=<?php echo $ruta?>" >Carpeta</a>
                 <a href="nuevoarchivo.php?Ruta=<?php echo $ruta?>">Archivo</a>
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn">regresar</button>
+            <button class="dropbtn">Regresar</button>
             <div class="dropdown-content">
              
               
@@ -150,10 +150,10 @@
             <a href="index.php?rutac='.$rutacomplemento.$i.'/'.'" >Abrir</a>
             <a href="renombrar.php?rutac='.$ruta.'&name='.$i.'">Renombrar</a>
             <a href="eliminarcarpeta.php?rutab='.RUTABASE.'&rutac='.$rutacomplemento.'&name='.$i.'" >Eliminar</a>
-            <a href="copyc.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >copair/pegar</a>
-            <a href=" #ver informacion de permisos" >Ver informacion de permisos</a>
-            <a href="#cambiar permisos de acseso" >Cambiar permisos de acseso</a>
-            <a href="#cambiar propietario" >Cambiar propietario</a>
+            <a href="copyc.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >copiar/pegar</a>
+            <a href=" mostrarpermisos.php?rutac='.$ruta.'&name='.$i.'" >Ver informacion de permisos</a>
+            <a href="cambiarpermisos.php?rutac='.$ruta.'&name='.$i.'" >Cambiar permisos de acceso</a>
+            <a href="cambiaruser.php?rutac='.$ruta.'&name='.$i.'" >Cambiar propietario</a>
             <a href="mover.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >Mover</a>
         </div>
     </div><br>';
@@ -161,7 +161,7 @@
       foreach($archivos as $i){
         echo ' <div class="dropdown">
         '.$i.'&nbsp'.'
-        <button class="dropbtn2">Carpeta</button>
+        <button class="dropbtn2">Archivo</button>
         <div class="dropdown-content">
          
           
@@ -169,10 +169,10 @@
             <a href="index.php'.$rutacomplemento.$i.'" >Abrir</a>
             <a href="renombrar.php?rutac='.$ruta.'&name='.$i.'">Renombrar</a>
             <a href="eliminararchivo.php?rutac='.$ruta.'&name='.$i.'" >Eliminar</a>
-            <a href="copiar.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >copair/pegar</a>
-            <a href=" #ver informacion de permisos" >Ver informacion de permisos</a>
-            <a href="#cambiar permisos de acseso" >Cambiar permisos de acseso</a>
-            <a href="#cambiar propietario" >Cambiar propietario</a>
+            <a href="copiar.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >copiar/pegar</a>
+            <a href="mostrarpermisos.php?rutac='.$ruta.'&name='.$i.'" >Ver informacion de permisos</a>
+            <a href="cambiarpermisos.php?rutac='.$ruta.'&name='.$i.'" >Cambiar permisos de acseso</a>
+            <a href="cambiaruser.php?rutac='.$ruta.'&name='.$i.'" >Cambiar propietario</a>
             <a href="mover.php?rutac='.$ruta.'&name='.$i.'&basica='.RUTABASE.'" >Mover</a>
         </div>
     </div><br>';
