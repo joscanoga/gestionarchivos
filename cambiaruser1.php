@@ -19,15 +19,15 @@ $ruta=$ubicacion.$name;
 
 #echo $nomviejo;
 #echo $nomnew;
-$result=exec("getent passwd | grep <".$nombre.">");
-echo $result;
-echo strlen($result);
+exec("sudo chown ".$nombre." ".$ruta);
+#echo $result;
+#echo strlen($result);
 session_stop;
-#chown($ruta,$nombre);
+chown ($ruta,$nombre) ;
 ?>
     </div>
     <div>
-        <a class="boton" href="index.php"> volver al inicio</a>
+        
     </div>
 </body>
 </html>

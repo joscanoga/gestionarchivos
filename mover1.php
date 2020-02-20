@@ -14,20 +14,20 @@ $rutaf=$_GET["rutaf"];
 
 
 session_start();
-$rutao =$_SESSION[rutao];
+$rutao =$_SESSION[ruta];
 $name=$_SESSION[name];
-$base=$_SESSION[base];
+$base=$_SESSION[rutab];
 session_stop;
 $nombrec1=$rutao.$name;
 $nombrec2=$base.$rutaf.$name;
-echo $nombrec1 .'<br>'.$nombrec2.'<br>';
+#echo $nombrec1 .'<br>'.$nombrec2.'<br>';
 if(file_exists($base.$rutaf)){
 if(file_exists($nombrec2)){
     echo "ya existe carpeta con el mismo nombre en ese directorio";
      
 }else{
 rename($nombrec1,$nombrec2);
-#echo "movido exitosamente";
+echo "movido exitosamente";
 }
 }else{
     echo "ruta destino no existe";
@@ -35,7 +35,6 @@ rename($nombrec1,$nombrec2);
 ?>
     </div>
     <div>
-        <a class="boton" href="index.php"> volver al inicio</a>
-    </div>
+        
 </body>
 </html>

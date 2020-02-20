@@ -16,7 +16,7 @@
         <?php 
         SESSION_start();
         $_SESSION['ruta']=$ruta;
-        ?>
+        #?>
         
         <form action="creararchivo.php" method="GET">
         <p>Nombre con extencion <input type="text" name="nombre"></p>

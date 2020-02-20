@@ -14,10 +14,10 @@ $rutaf=$_GET["rutaf"];
 
 
 session_start();
-$rutao =$_SESSION[rutao];
+$rutao =$_SESSION[ruta];
 $name=$_SESSION[name];
-$base=$_SESSION[base];
-session_stop;
+$base=$_SESSION[rutab];
+
 $nombrec1=$rutao.$name;
 $nombrec2=$base.$rutaf.$name;
 echo $nombrec1 .'<br>'.$nombrec2;

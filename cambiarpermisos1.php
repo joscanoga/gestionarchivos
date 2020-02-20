@@ -23,15 +23,15 @@ $name=$_SESSION[name];
 $nombre=$ubicacion.$name;
 #echo $nomviejo;
 #echo $nomnew;
-echo "chmod -R ".$permisos." ".$nombre;
-exec("chmod -R".$permisos." ".$nombre);
+#echo "chmod -R ".$permisos." ".$nombre;
+exec("chmod -R ".$permisos." ".$nombre);
 echo"cambio exitoso";
 session_stop;
 
 ?>
     </div>
     <div>
-        <a class="boton" href="index.php?rutac="> volver al inicio</a>
+        
     </div>
 </body>
 </html>

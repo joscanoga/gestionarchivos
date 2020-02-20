@@ -6,12 +6,12 @@
     <title>permisos </title>
     <style>
 		table {
-			width: 20px;
-			height: 30px;
+			width: 700px;
+			height: 500px;
             background-color: gray;
-            position:left;
-            top: 100px;
-            left: 200px;
+            position:absolute;
+            top:00px;
+            left: 00px;
 			}
 			th, td {
 			width: 30px;
@@ -20,18 +20,19 @@
 </head>
 <body>
 <?php
-$ruta=$_GET[rutab].$_GET[rutac];
+session_start();
+$ruta=$_SESSION[ruta];
 $name=$_GET[name];
-$rutab=$_GET[rutab];
-#echo $rutab
+#$rutab=$_GET[rutab];
+#echo $rutab;
 $rutac=$_GET[rutac];
 ?>
     <header>
 
 <?php 
-#echo $ruta.$name;
+$ruta.$name;
 $permisos = fileperms($ruta.$name);
-#echo decoct($permisos);
+echo decoct($permisos);
 switch ($perms & 0xF000) {
     case 0xC000: // Socket
         $info = 's';
@@ -84,7 +85,7 @@ $info .= (($permisos & 0x0001) ?
 $permisos=explode(" ",$info);
 #echo substr($permisos[1],1,1).$permisos[1]
 ?></header>
-<table data-vertable="ver1" style="font-size:100px" border="20px">
+<table data-vertable="ver1" style="font-size:auto" border="2px">
 <thead>
     <tr class="row100 head">
         <th class="column100 column1" data-column="column1">permisos</th>
@@ -117,7 +118,7 @@ $permisos=explode(" ",$info);
 </tbody>
 </table>
 <div>
-<a href="index.php?rutac=<?php echo $_GET[rutac]?>">atras</a><a href="index.php?rutac="> raiz</a>
+<?php #$ruta.$name;?>
     
 </div>
 </body>
