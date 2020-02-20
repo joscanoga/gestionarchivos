@@ -6,7 +6,7 @@
     <title>permisos </title>
     <style>
 		table {
-			width: 700px;
+			width: 900px;
 			height: 500px;
             background-color: gray;
             position:absolute;

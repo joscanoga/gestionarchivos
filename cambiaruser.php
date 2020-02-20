@@ -22,7 +22,7 @@
         ?>
         
         <form action="cambiaruser1.php" method="GET">
-        <p>Nombre<input type="text" name="nombre usuario "></p>
+        <p>Nombre<input type="text" name="nombre"></p>
         
         <p><input type="submit" value="cambiar propietario"></p>
         </form>

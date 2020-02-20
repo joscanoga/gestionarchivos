@@ -176,7 +176,7 @@
             <a href="index.php?urlcont=copyc.php?name='.$i.'&rutac='.$rutacomplemento.'" >copiar/pegar</a>
             <a href="index.php?urlcont=mostrarpermisos.php?name='.$i.'&rutac='.$rutacomplemento.'" >Ver informacion de permisos</a>
             <a href="index.php?urlcont=cambiarpermisos.php?name='.$i.'&rutac='.$rutacomplemento.'" >Cambiar permisos de acceso</a>
-            <a href="index.php?urlcont=cambiaruser.php?name='.$i.'" >Cambiar propietario</a>
+            <a href="index.php?urlcont=cambiaruser.php?name='.$i.'&rutac='.$rutacomplemento.'" >Cambiar propietario</a>
             <a href="index.php?urlcont=mover.php?name='.$i.'&rutac='.$rutacomplemento.'" >Mover</a>
         </div>
     </div><br>';
@@ -195,7 +195,7 @@
             <a href="index.php?urlcont=copiar.php?name='.$i.'&rutac='.$rutacomplemento.'" >copiar/pegar</a>
             <a href="index.php?urlcont=mostrarpermisos.php?name='.$i.'&rutac='.$rutacomplemento.'" >Ver informacion de permisos</a>
             <a href="index.php?urlcont=cambiarpermisos.php?name='.$i.'&rutac='.$rutacomplemento.'" >Cambiar permisos de acseso</a>
-            <a href="index.php?urlcont=cambiaruser.php?name='.$i.'" >Cambiar propietario</a>
+            <a href="index.php?urlcont=cambiaruser.php?name='.$i.'&rutac='.$rutacomplemento.'" >Cambiar propietario</a>
             <a href="index.php?urlcont=mover.php?name='.$i.'&rutac='.$rutacomplemento.'" >Mover</a>
         </div>
     </div><br>';
