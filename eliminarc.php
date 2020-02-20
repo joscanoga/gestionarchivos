@@ -25,7 +25,7 @@ if(file_exists($nombrec)){
 ?>
     </div>
     <div>
-        <a class="boton" href="index.php"> volver al inicio</a>
+       
     </div>
 </body>
 </html>

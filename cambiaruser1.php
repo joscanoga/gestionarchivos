@@ -10,24 +10,28 @@
     <?php
 $nombre=$_GET["nombre"];
 
-
-
+#echo $nombre.'<br>';
 session_start();
 $ubicacion =$_SESSION[ruta];
 $name=$_SESSION[name];
 $ruta=$ubicacion.$name;
-
+#echo $ruta.'<br>'.$ubicacion.'<br>'.$name;
+ shell_exec("sudo chown ".$nombre." ".$ruta);
+ echo "cambio exitoso";
+#chown ($ruta,$nombre) ;
+#echo $ruta.'<br>'.$ubicacion.'<br>'.$name;
 #echo $nomviejo;
 #echo $nomnew;
-$result=exec("getent passwd | grep <".$nombre.">");
-echo $result;
-echo strlen($result);
-session_stop;
-#chown($ruta,$nombre);
+#exec("sudo chown ".$nombre." ".$ruta);
+#echo $result;
+#echo strlen($result);
+#session_stop();
+ #echo $ruta.'<br>'.$nombre;
+#chown ($ruta,$nombre) ;
 ?>
     </div>
     <div>
-        <a class="boton" href="index.php"> volver al inicio</a>
+        
     </div>
 </body>
 </html>

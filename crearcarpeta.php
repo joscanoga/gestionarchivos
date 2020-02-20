@@ -30,7 +30,7 @@ echo "carpeta creada";
 ?>
     </div>
     <div>
-        <a class="boton" href="index.php"> volver al inicio</a>
+        
     </div>
 </body>
 </html>

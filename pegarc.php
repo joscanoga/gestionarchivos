@@ -14,12 +14,14 @@ $rutaf=$_GET["rutaf"];
 
 
 session_start();
-$rutao =$_SESSION[rutao];
-$name=$_SESSION[name];
-$base=$_SESSION[base];
+$rutao =$_SESSION[ruta];
+$name="/".$_SESSION[name];
+$base=$_SESSION[rutab];
 session_stop;
 $nombrec1=$rutao.$name;
 $nombrec2=$base.$rutaf.$name;
+#echo $nombrec1.'<br>'.$nombrec2;
+#echo $base.'<br>'.$rutaf.'<br>'.$name;
 
 if(file_exists($nombrec2)){
     echo "ya existe carpeta con el mismo nombre en ese directorio";

@@ -11,16 +11,16 @@
     <img src="imagenes/carpeta.png" border="0" width="100" height="100">
     </div>
     <div>
-        <?php $ruta=$_GET[rutac];
+        <?php #$ruta=$_GET[rutac];
         $name=$_GET[name];
-        $base=$_GET[basica];
+        #$base=$_GET[basica];
          #echo $ruta.$name;
         ?>
         <?php 
         SESSION_start();
-        $_SESSION['rutao']=$ruta;
+        #$_SESSION['rutao']=$ruta;
         $_SESSION['name']=$name;
-        $_SESSION['base']=$base;
+        #$_SESSION['base']=$base;
         ?>
         
         <form action="mover1.php" method="GET">

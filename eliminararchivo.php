@@ -7,13 +7,15 @@
 </head>
 <body>
 <?php
-$ruta=$_GET[rutac];
+session_start();
+$ruta=$_SESSION[rutab].$_SESSION[rutac];
 $name=$_GET[name];
+echo $ruta.$name;
 ?>
     <header>
 <h1>Desea eliminar el archivo</h1>
 <div>
-<a href="index.php?rutac=<?php echo $ruta?>">no </a><a href="eliminara.php?ruta=<?php  echo $ruta ?>&name=<?php echo $name ?>"> si</a>
+<a href="eliminara.php?ruta=<?php  echo $ruta ?>&name=<?php echo $name ?>"> <img src="imagenes/ecarpeta.png" width="100" height="100"></a>
     </header>
 </body>
 </html>

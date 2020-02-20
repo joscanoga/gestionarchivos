@@ -21,17 +21,25 @@ $ubicacion =$_SESSION[ruta];
 $name=$_SESSION[name];
 
 $nombre=$ubicacion.$name;
+#echo $nombre.'<br>'.$permisos;
 #echo $nomviejo;
 #echo $nomnew;
-echo "chmod -R ".$permisos." ".$nombre;
-exec("chmod -R".$permisos." ".$nombre);
+#echo "chmod -R ".$permisos." ".$nombre;
+#echo fileowner($nombre);
+if(posix_getpwuid(fileowner($nombre))[name]=="johan"){
+#print_r(posix_getpwuid(fileowner($nombre))[name]);
+exec("chmod -R ".$permisos." ".$nombre);
 echo"cambio exitoso";
-session_stop;
+}else {
+   echo "usuario no es propietario de la carpeta" ;# code...
+}
+
+session_stop();
 
 ?>
     </div>
     <div>
-        <a class="boton" href="index.php?rutac="> volver al inicio</a>
+        
     </div>
 </body>
 </html>

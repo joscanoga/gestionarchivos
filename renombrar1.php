@@ -32,7 +32,7 @@ if(file_exists($ubicacion."/".$nombre)){
 ?>
     </div>
     <div>
-        <a class="boton" href="index.php"> volver al inicio</a>
+        
     </div>
 </body>
 </html>

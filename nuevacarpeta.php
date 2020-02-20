@@ -12,7 +12,7 @@
     </div>
     <div>
         <?php $ruta=$_GET[Ruta];
-        echo $ruta;
+        #echo $ruta;
         ?>
         <?php 
         SESSION_start();
